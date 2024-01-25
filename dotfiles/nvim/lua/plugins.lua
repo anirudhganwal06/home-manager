@@ -42,6 +42,9 @@ return require('packer').startup(function(use)
     run = ":MasonUpdate"                  -- :MasonUpdate updates registry contents
   }
 
+  -- Formatter
+  use 'stevearc/conform.nvim'
+
   -- Git
   use 'lewis6991/gitsigns.nvim'
 
