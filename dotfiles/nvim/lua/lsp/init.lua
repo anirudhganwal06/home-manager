@@ -6,13 +6,11 @@ local cmp = require("cmp")
 
 local servers = {
 	-- Lua
-	"stylua",
+	"lua_ls",
 	-- Ruby
-	"rubocop",
 	"solargraph",
+	"rubocop",
 	-- JS
-	"prettierd",
-	"prettier",
 	"eslint",
 }
 
