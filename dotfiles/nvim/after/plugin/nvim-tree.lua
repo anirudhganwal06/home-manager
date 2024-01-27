@@ -16,6 +16,22 @@ require("nvim-tree").setup({
 	},
 	renderer = {
 		group_empty = true,
+		icons = {
+			show = {
+				folder_arrow = false,
+			},
+			glyphs = {
+				git = {
+					untracked = "◌",
+					unstaged = "○",
+					staged = "●",
+					ignored = "⊘",
+				},
+			},
+		},
+	},
+	diagnostics = {
+		enable = true,
 	},
 	filters = {
 		dotfiles = false, -- Show dotfiles

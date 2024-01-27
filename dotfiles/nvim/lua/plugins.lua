@@ -13,7 +13,6 @@ return require("packer").startup(function(use)
 	-- Fuzzy Finder
 	use({
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.2",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 	use({
@@ -58,9 +57,11 @@ return require("packer").startup(function(use)
 	})
 
 	-- Autosave
-	-- use("pocco81/auto-save.nvim")
 	use("tmillr/sos.nvim")
 
 	-- Comment code
 	use("numToStr/Comment.nvim")
+
+	-- Status Column (For Git signs, diagnostics, folds)
+	use("luukvbaal/statuscol.nvim")
 end)

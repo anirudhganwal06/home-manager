@@ -11,7 +11,7 @@ local servers = {
 	"solargraph",
 	"rubocop",
 	-- JS
-	"eslint",
+	"tsserver",
 }
 
 local on_attach = function(_, _)
@@ -74,3 +74,9 @@ cmp.setup({
 		{ name = "luasnip" },
 	},
 })
+
+local signs = { Error = "", Warn = "", Hint = "", Info = "" }
+for type, icon in pairs(signs) do
+	local hl = "DiagnosticSign" .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
