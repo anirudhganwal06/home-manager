@@ -19,3 +19,5 @@ keymap.set("n", "<leader>d", ":vsplit<cr>") -- Split vertically
 keymap.set("n", "<leader>T", ":split | terminal<cr>8<C-w>_i") -- Open terminal in horizontal split
 keymap.set("n", "<leader>t", ":vsplit | terminal<cr>i") -- Open terminal in vertical split
 keymap.set("n", "<leader>s", ":!") -- Start typing shell command
+keymap.set("n", "<C-d>", "<C-d>zz") -- Start typing shell command
+keymap.set("n", "<C-u>", "<C-u>zz") -- Start typing shell command

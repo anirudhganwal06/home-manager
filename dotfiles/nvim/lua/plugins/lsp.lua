@@ -25,6 +25,9 @@ return {
 		local on_attach = function(_, _)
 			vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+			vim.keymap.set("n", "<leader>mca", vim.lsp.buf.code_action, {})
+			vim.keymap.set("n", "<leader>mrr", vim.lsp.buf.references, {})
+			vim.keymap.set("n", "<leader>mrn", vim.lsp.buf.rename, {})
 		end
 
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
