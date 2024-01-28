@@ -8,6 +8,9 @@ return {
 	config = function()
 		local luasnip = require("luasnip")
 		local cmp = require("cmp")
+		local winhighlight = {
+			winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel",
+		}
 
 		cmp.setup({
 			snippet = {
@@ -46,6 +49,10 @@ return {
 			sources = {
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
+			},
+			window = {
+				completion = cmp.config.window.bordered(winhighlight),
+				documentation = cmp.config.window.bordered(winhighlight),
 			},
 		})
 

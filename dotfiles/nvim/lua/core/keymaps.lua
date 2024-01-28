@@ -28,3 +28,4 @@ keymap.set("n", "<A-k>", ":m .-2<CR>==") -- move line down(n)
 keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv") -- move line up(v)
 keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv") -- move line down(v)
 keymap.set("n", "<leader><cr>", ":tab split<cr>") -- Open in a new tab fullscreen
+keymap.set("n", "gx", ":!open <c-r><c-a><cr>", { silent = true }) -- Open a link
