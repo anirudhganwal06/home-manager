@@ -5,7 +5,7 @@ return {
 		"neovim/nvim-lspconfig",
 		"hrsh7th/cmp-nvim-lsp", -- LSP source for nvim-cmp
 	},
-	run = ":MasonUpdate", -- :MasonUpdate updates registry contents
+	build = ":MasonUpdate", -- :MasonUpdate updates registry contents
 	config = function()
 		vim.print("Configuring LSP")
 		require("mason").setup()

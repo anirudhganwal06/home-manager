@@ -39,4 +39,4 @@ opt.iskeyword:append("-")
 
 -- Title
 opt.title = true
-opt.titlestring = '%(%{expand("%:~:.:h")}%)/%t - Vim'
+opt.titlestring = "%{substitute(getcwd(), $HOME, '~', '')}"
