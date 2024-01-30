@@ -6,7 +6,7 @@ return {
 				lua = { "stylua" },
 				ruby = { "rubocop" },
 				javascript = { { "prettierd", "prettier" }, "eslint_d" },
-				json = { "prettierd" },
+				json = { "fixjson" },
 			},
 			format_on_save = function(bufnr)
 				-- Disable autoformat on certain filetypes

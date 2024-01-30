@@ -17,7 +17,7 @@ return {
 		vim.keymap.set("n", "<leader>ft", builtin.filetypes, {})
 		vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 		vim.keymap.set("n", "<leader>help", builtin.help_tags, {})
-		vim.keymap.set("n", "<leader>gb", builtin.git_branches, {})
+		vim.keymap.set("n", "<leader>gbr", builtin.git_branches, {})
 		vim.keymap.set("n", "<leader>gs", builtin.git_status, {})
 
 		require("telescope").setup({
