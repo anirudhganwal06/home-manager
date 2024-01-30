@@ -1,3 +1,4 @@
+require("core.utils")
 require("core.keymaps")
 require("plugins")
 require("core.options")

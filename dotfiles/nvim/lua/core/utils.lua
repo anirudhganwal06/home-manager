@@ -1,5 +1,3 @@
-function EscapeText(text)
-	text = vim.fn.escape(vim.fn.escape(text, "'"), '\\/"')
-	print(text)
-	return text
+function EscapeText()
+	return vim.fn.escape(vim.fn.getreg('"'), "\\/\"'")
 end
