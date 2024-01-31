@@ -22,20 +22,39 @@ return {
 			"tsserver",
 		}
 
-		local on_attach = function(_, _)
-			vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-			vim.keymap.set("n", "<leader>mca", vim.lsp.buf.code_action, {})
-			vim.keymap.set("n", "<leader>mrr", vim.lsp.buf.references, {})
-			vim.keymap.set("n", "<leader>mrn", vim.lsp.buf.rename, {})
-		end
-
-		local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
 		mason_lspconfig.setup({
 			ensure_installed = servers,
 			automatic_installation = true,
 		})
+
+		local on_attach = function(ev)
+			local opts = { buffer = ev.buf }
+
+			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+			vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+			vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+			vim.keymap.set("n", "<leader>msh", vim.lsp.buf.signature_help, opts)
+			vim.keymap.set("n", "<leader>maw", vim.lsp.buf.add_workspace_folder, opts)
+			vim.keymap.set("n", "<leader>mrw", vim.lsp.buf.remove_workspace_folder, opts)
+			vim.keymap.set("n", "<leader>mlw", function()
+				print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+			end, opts)
+			vim.keymap.set("n", "<leader>mtd", vim.lsp.buf.type_definition, opts)
+			vim.keymap.set("n", "<leader>mrn", vim.lsp.buf.rename, opts)
+			vim.keymap.set({ "n", "v" }, "<leader>mca", vim.lsp.buf.code_action, opts)
+			vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+			vim.keymap.set("n", "<leader>mf.", function()
+				vim.lsp.buf.format({ async = true })
+			end, opts)
+
+			vim.keymap.set("n", "<leader>mdf", vim.diagnostic.open_float)
+			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+			vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+			vim.keymap.set("n", "<leader>mdq", vim.diagnostic.setloclist)
+		end
+
+		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 		mason_lspconfig.setup_handlers({
 			function(server_name)

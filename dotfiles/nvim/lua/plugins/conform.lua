@@ -26,6 +26,7 @@ return {
 				-- ...additional logic...
 				return { timeout_ms = 500, lsp_fallback = true }
 			end,
+			notify_on_error = false,
 		})
 
 		-- Create :Format command to trigger formatting

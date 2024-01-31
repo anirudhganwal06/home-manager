@@ -15,7 +15,7 @@ keymap.set("n", "<leader>k", ":wincmd k<cr>") -- Focus on upper pane
 keymap.set("n", "<leader>l", ":wincmd l<cr>") -- Focus on right pane
 keymap.set("n", "<leader>D", ":split<cr>") -- Split horizontally
 keymap.set("n", "<leader>d", ":vsplit<cr>") -- Split vertically
-keymap.set("n", "<leader>T", ":split | terminal<cr>8<C-w>_i") -- Open terminal in horizontal split
+keymap.set("n", "<leader>T", ":split | terminal<cr>12<C-w>_i") -- Open terminal in horizontal split
 keymap.set("n", "<leader>t", ":vsplit | terminal<cr>i") -- Open terminal in vertical split
 keymap.set("n", "<leader>s", ":!") -- Start typing shell command
 keymap.set("n", "<C-d>", "<C-d>zz") -- Bring cursor to center

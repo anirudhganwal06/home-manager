@@ -19,6 +19,9 @@ return {
 		vim.keymap.set("n", "<leader>help", builtin.help_tags, {})
 		vim.keymap.set("n", "<leader>gbr", builtin.git_branches, {})
 		vim.keymap.set("n", "<leader>gs", builtin.git_status, {})
+		vim.keymap.set("n", "<leader>mdt", function()
+			builtin.diagnostics({ bufnr = 0 })
+		end, {})
 
 		require("telescope").setup({
 			defaults = {
