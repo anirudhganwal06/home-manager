@@ -8,7 +8,6 @@ return {
 				hidden = true,
 			})
 		end, {})
-
 		vim.keymap.set("n", "<leader>P", builtin.commands, {})
 		vim.keymap.set("v", "<leader>F", "y<ESC>:Telescope live_grep default_text=<c-r>0<CR>", {})
 		vim.keymap.set("n", "<leader>F", builtin.live_grep, {})
@@ -23,7 +22,10 @@ return {
 			builtin.diagnostics({ bufnr = 0 })
 		end, {})
 
-		require("telescope").setup({
+		local telescope = require("telescope")
+		telescope.load_extension("noice")
+		telescope.load_extension("notify")
+		telescope.setup({
 			defaults = {
 				layout_strategy = "vertical",
 				layout_config = {

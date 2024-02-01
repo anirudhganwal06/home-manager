@@ -17,7 +17,6 @@ return {
 			"lua_ls",
 			-- Ruby
 			"solargraph",
-			"rubocop",
 			-- JS
 			"tsserver",
 		}
@@ -32,8 +31,9 @@ return {
 
 			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 			vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+			vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 			vim.keymap.set("n", "<leader>msh", vim.lsp.buf.signature_help, opts)
 			vim.keymap.set("n", "<leader>maw", vim.lsp.buf.add_workspace_folder, opts)
 			vim.keymap.set("n", "<leader>mrw", vim.lsp.buf.remove_workspace_folder, opts)
@@ -43,7 +43,6 @@ return {
 			vim.keymap.set("n", "<leader>mtd", vim.lsp.buf.type_definition, opts)
 			vim.keymap.set("n", "<leader>mrn", vim.lsp.buf.rename, opts)
 			vim.keymap.set({ "n", "v" }, "<leader>mca", vim.lsp.buf.code_action, opts)
-			vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
 			vim.keymap.set("n", "<leader>mf.", function()
 				vim.lsp.buf.format({ async = true })
 			end, opts)

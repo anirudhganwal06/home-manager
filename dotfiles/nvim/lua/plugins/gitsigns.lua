@@ -12,7 +12,7 @@ return {
 				end
 
 				-- Navigation
-				map("n", "]c", function()
+				map("n", "<leader>gj", function()
 					if vim.wo.diff then
 						return "]c"
 					end
@@ -24,7 +24,7 @@ return {
 
 				map("n", "[c", function()
 					if vim.wo.diff then
-						return "[c"
+						return "<leader>gk"
 					end
 					vim.schedule(function()
 						gs.prev_hunk()

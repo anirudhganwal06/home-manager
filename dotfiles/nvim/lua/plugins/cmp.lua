@@ -1,9 +1,10 @@
 return {
 	"hrsh7th/nvim-cmp", -- Autocompletion plugin
 	dependencies = {
-		"saadparwaiz1/cmp_luasnip", -- Snippets source for nvim-cmp
-		"rafamadriz/friendly-snippets", -- Collection of snippets
 		"L3MON4D3/LuaSnip", -- Snippets plugin -- LSP
+		"saadparwaiz1/cmp_luasnip", -- Snippets source for nvim-cmp
+		"hrsh7th/cmp-buffer",
+		"hrsh7th/cmp-cmdline",
 	},
 	config = function()
 		local luasnip = require("luasnip")
@@ -56,11 +57,31 @@ return {
 			},
 		})
 
-		-- local signs = { Method = "" }
-		-- for type, icon in pairs(signs) do
-		-- 	local hl = "CmpItemKind" .. type
-		-- 	vim.print(hl)
-		-- 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-		-- end
+		-- -- Set configuration for specific filetype.
+		-- cmp.setup.filetype("gitcommit", {
+		-- 	sources = cmp.config.sources({
+		-- 		{ name = "git" }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
+		-- 	}, {
+		-- 		{ name = "buffer" },
+		-- 	}),
+		-- })
+
+		-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+		cmp.setup.cmdline({ "/", "?" }, {
+			mapping = cmp.mapping.preset.cmdline(),
+			sources = {
+				{ name = "buffer" },
+			},
+		})
+
+		-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+		cmp.setup.cmdline(":", {
+			mapping = cmp.mapping.preset.cmdline(),
+			sources = cmp.config.sources({
+				{ name = "path" },
+			}, {
+				{ name = "cmdline" },
+			}),
+		})
 	end,
 }

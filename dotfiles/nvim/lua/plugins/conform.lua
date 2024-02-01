@@ -7,6 +7,7 @@ return {
 				ruby = { "rubocop" },
 				javascript = { { "prettierd", "prettier" }, "eslint_d" },
 				json = { "fixjson" },
+				xml = { "xmlformat" },
 			},
 			format_on_save = function(bufnr)
 				-- Disable autoformat on certain filetypes
