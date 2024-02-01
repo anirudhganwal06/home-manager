@@ -14,7 +14,7 @@ return {
 				-- Navigation
 				map("n", "<leader>gj", function()
 					if vim.wo.diff then
-						return "]c"
+						return "<leader>gj"
 					end
 					vim.schedule(function()
 						gs.next_hunk()
@@ -22,7 +22,7 @@ return {
 					return "<Ignore>"
 				end, { expr = true })
 
-				map("n", "[c", function()
+				map("n", "<leader>gk", function()
 					if vim.wo.diff then
 						return "<leader>gk"
 					end
