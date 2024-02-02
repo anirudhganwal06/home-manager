@@ -18,7 +18,6 @@ keymap.set("n", "<leader>l", ":wincmd l<cr>") -- Focus on right pane
 keymap.set("n", "<leader>D", ":split<cr>") -- Split horizontally
 keymap.set("n", "<leader>d", ":vsplit<cr>") -- Split vertically
 keymap.set("n", "<leader>T", ":split | terminal<cr>12<C-w>_i") -- Open terminal in horizontal split
-keymap.set("n", "<leader>t", ":vsplit | terminal<cr>i") -- Open terminal in vertical split
 keymap.set("n", "<leader>s", ":!") -- Start typing shell command
 keymap.set("n", ",", "<C-d>zz") -- Bring cursor to center
 keymap.set("n", ";", "<C-u>zz") -- Bring cursor to center
@@ -30,6 +29,6 @@ keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv") -- move line up(v)
 keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv") -- move line down(v)
 keymap.set("n", "<leader><cr>", ":tab split<cr>") -- Open in a new tab fullscreen
 keymap.set("n", "gx", ":!open <c-r><c-a><cr>", { silent = true }) -- Open a link
-keymap.set("n", "<esc>", ":nohl<cr><esc>", { silent = true }) -- Also remove highlight when esc
+keymap.set("n", "<esc>", "<cmd>nohl<cr><cmd>NoiceDismiss<cr><esc>", { silent = true }) -- Also remove highlight when esc
 keymap.set("v", "<leader>fr", "y:%s/\\V<C-r>=v:lua.EscapeText()<cr>//gc<left><left><left>", { noremap = true }) -- Find & Replace ANYTHING
 keymap.set("v", "*", "y/\\V<C-r>=v:lua.EscapeText()<cr><cr>", { noremap = true }) -- Find ANYTHING

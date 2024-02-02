@@ -2,6 +2,7 @@ return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
+		local noice = require("noice")
 		require("lualine").setup({
 			options = {
 				icons_enabled = true,
@@ -33,8 +34,18 @@ return {
 				},
 				lualine_x = {
 					{
+						noice.api.status.command.get,
+						color = { fg = "#ff9e64" },
+						cond = require("noice").api.status.command.has,
+					},
+					{
+						noice.api.status.mode.get,
+						color = { fg = "#ff9e64" },
+						cond = require("noice").api.status.mode.has,
+					},
+					{
 						"searchcount",
-						maxcount = 999,
+						maxcount = 99999,
 						timeout = 500,
 					},
 					{
