@@ -20,6 +20,10 @@ opt.smartcase = true
 -- Cursor Line
 opt.cursorline = true
 
+-- Cursor
+opt.guicursor =
+	"n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
+
 -- Appearance
 opt.termguicolors = true
 opt.background = "dark"
@@ -40,3 +44,7 @@ opt.iskeyword:append("-")
 -- Title
 opt.title = true
 opt.titlestring = "%{substitute(getcwd(), $HOME, '~', '')}"
+
+-- Fold
+opt.foldmethod = "indent"
+opt.foldenable = false

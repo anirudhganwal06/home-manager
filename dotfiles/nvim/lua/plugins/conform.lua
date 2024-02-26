@@ -5,9 +5,15 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				ruby = { "rubocop" },
-				javascript = { { "prettierd", "prettier" }, "eslint_d" },
+				javascript = { "prettierd", "eslint_d" },
+				typescript = { "prettierd", "eslint_d" },
+				javascriptreact = { "prettierd", "eslint_d" },
+				typescriptreact = { "prettierd", "eslint_d" },
 				json = { "fixjson" },
 				xml = { "xmlformat" },
+				cpp = { "clang_format" },
+				swift = { "swift_format" },
+				html = { "prettierd", "eslint_d" },
 			},
 			format_on_save = function(bufnr)
 				-- Disable autoformat on certain filetypes

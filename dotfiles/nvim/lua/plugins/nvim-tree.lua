@@ -8,7 +8,7 @@ return {
 		-- set termguicolors to enable highlight groups
 		vim.opt.termguicolors = true
 
-		vim.api.nvim_set_keymap("n", "<leader>b", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+		vim.api.nvim_set_keymap("n", "<leader>bb", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 		vim.api.nvim_set_keymap("n", "<leader>rf", ":NvimTreeFindFile<CR>", { noremap = true, silent = true })
 
 		-- Setup with some options

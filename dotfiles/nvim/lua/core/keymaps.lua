@@ -19,8 +19,8 @@ keymap.set("n", "<leader>D", ":split<cr>") -- Split horizontally
 keymap.set("n", "<leader>d", ":vsplit<cr>") -- Split vertically
 keymap.set("n", "<leader>T", ":split | terminal<cr>12<C-w>_i") -- Open terminal in horizontal split
 keymap.set("n", "<leader>s", ":!") -- Start typing shell command
-keymap.set("n", ",", "<C-d>zz") -- Bring cursor to center
-keymap.set("n", ";", "<C-u>zz") -- Bring cursor to center
+keymap.set("n", "<C-d>", "<C-d>zz") -- Bring cursor to center
+keymap.set("n", "<C-u>", "<C-u>zz") -- Bring cursor to center
 keymap.set("n", "n", "nzz") -- Bring cursor to center
 keymap.set("n", "N", "Nzz") -- Bring cursor to center
 keymap.set("n", "<A-j>", ":m .+1<CR>==") -- move line up(n)
