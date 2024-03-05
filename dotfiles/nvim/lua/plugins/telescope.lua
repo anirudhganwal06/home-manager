@@ -2,7 +2,9 @@ return {
 	"nvim-telescope/telescope.nvim",
 	dependencies = { "nvim-lua/plenary.nvim" },
 	config = function()
+		local telescope = require("telescope")
 		local builtin = require("telescope.builtin")
+
 		vim.keymap.set("n", "<leader>p", function()
 			builtin.find_files({
 				hidden = true,
@@ -25,15 +27,30 @@ return {
 			builtin.diagnostics({ bufnr = 0 })
 		end, {})
 
-		local telescope = require("telescope")
 		telescope.setup({
 			defaults = {
 				layout_strategy = "vertical",
+				prompt_prefix = "🔭 ",
+				selection_caret = "➜ ",
+				path_display = { "truncate" },
 				layout_config = {
-					-- prompt_position = 'top'
+					width = 0.8,
+					height = 0.9,
+				},
+			},
+			pickers = {
+				buffers = {
+					show_all_buffers = true,
+					sort_lastused = true,
+					mappings = {
+						n = {
+							["d"] = "delete_buffer",
+						},
+					},
 				},
 			},
 		})
+
 		telescope.load_extension("noice")
 		telescope.load_extension("notify")
 	end,
