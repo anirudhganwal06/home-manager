@@ -36,8 +36,10 @@ return {
 				layout_config = {
 					width = 0.8,
 					height = 0.9,
+					preview_cutoff = 0,
 				},
 			},
+
 			pickers = {
 				buffers = {
 					show_all_buffers = true,

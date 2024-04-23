@@ -14,6 +14,8 @@ return {
 				cpp = { "clang_format" },
 				swift = { "swift_format" },
 				html = { "prettierd", "eslint_d" },
+				python = { "black" },
+				sql = { "sql-formatter" },
 			},
 			format_on_save = function(bufnr)
 				-- Disable autoformat on certain filetypes
