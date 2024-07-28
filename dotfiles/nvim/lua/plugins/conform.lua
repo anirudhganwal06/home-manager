@@ -16,6 +16,9 @@ return {
 				html = { "prettierd", "eslint_d" },
 				python = { "black" },
 				sql = { "sql-formatter" },
+				ejs = { "prettierd", "eslint_d" },
+				css = { "prettierd", "eslint_d" },
+				go = { "gofmt" },
 			},
 			format_on_save = function(bufnr)
 				-- Disable autoformat on certain filetypes
