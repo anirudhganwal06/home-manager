@@ -48,3 +48,6 @@ opt.titlestring = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
 -- Fold
 opt.foldmethod = "indent"
 opt.foldenable = false
+
+-- Configure showmode for lualine
+opt.showmode = false
