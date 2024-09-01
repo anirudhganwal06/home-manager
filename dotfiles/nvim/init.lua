@@ -1,5 +1,5 @@
 require("core.utils")
 require("core.keymaps")
-require("plugins")
+require("config.lazy")
 require("core.options")
 require("core.colorscheme")

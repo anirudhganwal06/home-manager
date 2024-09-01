@@ -43,7 +43,7 @@ opt.iskeyword:append("-")
 
 -- Title
 opt.title = true
-opt.titlestring = vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. " - nvim"
+opt.titlestring = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
 
 -- Fold
 opt.foldmethod = "indent"

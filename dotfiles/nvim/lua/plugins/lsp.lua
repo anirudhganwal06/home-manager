@@ -43,14 +43,14 @@ return {
 			vim.keymap.set("n", "<leader>mtd", vim.lsp.buf.type_definition, opts)
 			vim.keymap.set("n", "<leader>mrn", vim.lsp.buf.rename, opts)
 			vim.keymap.set({ "n", "v" }, "<leader>mca", vim.lsp.buf.code_action, opts)
-			vim.keymap.set("n", "<leader>mf.", function()
-				vim.lsp.buf.format({ async = true })
-			end, opts)
+			-- vim.keymap.set("n", "<leader>mf.", function()
+			-- 	vim.lsp.buf.format({ async = true })
+			-- end, opts)
 
-			vim.keymap.set("n", "<leader>mdf", vim.diagnostic.open_float)
-			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-			vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
-			vim.keymap.set("n", "<leader>mdq", vim.diagnostic.setloclist)
+			vim.keymap.set("n", "<leader>mf", vim.diagnostic.open_float)
+			vim.keymap.set("n", "<leader>mk", vim.diagnostic.goto_prev)
+			vim.keymap.set("n", "<leader>mj", vim.diagnostic.goto_next)
+			vim.keymap.set("n", "<leader>mq", vim.diagnostic.setloclist)
 		end
 
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()

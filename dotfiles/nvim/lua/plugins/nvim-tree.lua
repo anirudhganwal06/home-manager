@@ -18,11 +18,16 @@ return {
 				width = 30,
 			},
 			renderer = {
-				group_empty = true,
+				full_name = true,
+				root_folder_label = function(path)
+					return " " .. vim.fn.fnamemodify(path, ":t") .. " "
+				end,
+				group_empty = false,
 				icons = {
 					show = {
 						folder_arrow = false,
 					},
+					git_placement = "after",
 					glyphs = {
 						git = {
 							untracked = "◌",

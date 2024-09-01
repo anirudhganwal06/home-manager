@@ -1,7 +1,8 @@
 return {
 	"stevearc/conform.nvim",
 	config = function()
-		require("conform").setup({
+		local conform = require("conform")
+		conform.setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
 				ruby = { "rubocop" },
@@ -19,6 +20,7 @@ return {
 				ejs = { "prettierd", "eslint_d" },
 				css = { "prettierd", "eslint_d" },
 				go = { "gofmt" },
+				rust = { "rustfmt" },
 			},
 			format_on_save = function(bufnr)
 				-- Disable autoformat on certain filetypes
@@ -51,7 +53,7 @@ return {
 					["end"] = { args.line2, end_line:len() },
 				}
 			end
-			require("conform").format({ async = true, lsp_fallback = true, range = range })
+			conform.format({ async = true, lsp_fallback = true, range = range })
 		end, { range = true })
 
 		vim.api.nvim_create_user_command("FormatDisable", function(args)

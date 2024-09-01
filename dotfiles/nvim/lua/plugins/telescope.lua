@@ -13,7 +13,7 @@ return {
 		vim.keymap.set("n", "<leader>tt", builtin.builtin, {})
 		vim.keymap.set("n", "<leader>bu", builtin.buffers, {})
 		vim.keymap.set("n", "<leader>th", builtin.help_tags, {})
-		vim.keymap.set("n", "<leader>tr", builtin.registers, {})
+		vim.keymap.set("n", "<leader>tr", ":Telescope resume<CR>", {})
 		vim.keymap.set("n", "<leader>tk", builtin.keymaps, {})
 		vim.keymap.set("n", "<leader>P", builtin.commands, {})
 		vim.keymap.set("v", "<leader>fa", "y<ESC>:Telescope live_grep default_text=<c-r>0<CR>", {})
@@ -31,7 +31,7 @@ return {
 			defaults = {
 				layout_strategy = "vertical",
 				prompt_prefix = "🔭 ",
-				selection_caret = "➜ ",
+				selection_caret = " ",
 				path_display = { "truncate" },
 				layout_config = {
 					width = 0.8,
