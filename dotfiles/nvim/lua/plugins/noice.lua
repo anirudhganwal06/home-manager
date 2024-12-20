@@ -34,10 +34,12 @@ return {
 			messages = { view_search = false },
 		})
 		require("notify").setup({
-			background_colour = "#0000",
-			timeout = 2000,
+			background_colour = "#000000",
+			timeout = 1000,
 			stages = "fade_in_slide_out",
 			max_width = 50,
+			top_down = false,
+			render = "minimal",
 		})
 	end,
 }

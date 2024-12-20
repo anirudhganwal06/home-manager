@@ -137,8 +137,7 @@ return {
 						color = { fg = "#ff9e64" },
 					},
 				},
-				lualine_y = {},
-				lualine_z = {
+				lualine_y = {
 					{
 						clients_lsp,
 						padding = { left = 0, right = 1 },
@@ -160,6 +159,7 @@ return {
 					},
 				},
 			},
+			lualine_z = {},
 			tabline = {},
 			winbar = {},
 			inactive_winbar = {},

@@ -6,10 +6,10 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				ruby = { "rubocop" },
-				javascript = { "prettierd", "eslint_d" },
-				typescript = { "prettierd", "eslint_d" },
-				javascriptreact = { "prettierd", "eslint_d" },
-				typescriptreact = { "prettierd", "eslint_d" },
+				javascript = { "prettier", "eslint_d" },
+				typescript = { "prettier", "eslint_d" },
+				javascriptreact = { "prettier", "eslint_d" },
+				typescriptreact = { "prettier", "eslint_d" },
 				json = { "fixjson" },
 				xml = { "xmlformat" },
 				cpp = { "clang_format" },
@@ -21,24 +21,14 @@ return {
 				css = { "prettierd", "eslint_d" },
 				go = { "gofmt" },
 				rust = { "rustfmt" },
+				java = { "google-java-format" },
+				bash = { "shfmt" },
 			},
-			format_on_save = function(bufnr)
-				-- Disable autoformat on certain filetypes
-				-- local ignore_filetypes = { "sql", "java" }
-				-- if vim.tbl_contains(ignore_filetypes, vim.bo[bufnr].filetype) then
-				--   return
-				-- end
-				-- Disable with a global or buffer-local variable
+			format_after_save = function(bufnr)
 				if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
 					return
 				end
-				-- Disable autoformat for files in a certain path
-				-- local bufname = vim.api.nvim_buf_get_name(bufnr)
-				-- if bufname:match("/node_modules/") then
-				--   return
-				-- end
-				-- ...additional logic...
-				return { timeout_ms = 500, lsp_fallback = true }
+				return { lsp_format = "fallback" }
 			end,
 			notify_on_error = false,
 		})
