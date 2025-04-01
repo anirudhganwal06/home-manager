@@ -15,10 +15,6 @@ return {
 		local servers = {
 			-- Lua
 			"lua_ls",
-			-- Ruby
-			"solargraph",
-			-- JS
-			"tsserver",
 		}
 
 		mason_lspconfig.setup({
