@@ -15,6 +15,10 @@ keymap.set("n", "<leader>h", ":wincmd h<cr>") -- Focus on left pane
 keymap.set("n", "<leader>j", ":wincmd j<cr>") -- Focus on below pane
 keymap.set("n", "<leader>k", ":wincmd k<cr>") -- Focus on upper pane
 keymap.set("n", "<leader>l", ":wincmd l<cr>") -- Focus on right pane
+keymap.set("n", "<C-l>", ":vertical resize +3<cr>") -- Increase columns
+keymap.set("n", "<C-h>", ":vertical resize -3<cr>") -- Decrease columns
+keymap.set("n", "<C-k>", ":resize -3<cr>") -- Decrease rows
+keymap.set("n", "<C-j>", ":resize +3<cr>") -- Increase rows
 keymap.set("n", "<leader>D", ":split<cr>") -- Split horizontally
 keymap.set("n", "<leader>d", ":vsplit<cr>") -- Split vertically
 keymap.set("n", "<leader>T", ":split | terminal<cr>12<C-w>_i") -- Open terminal in horizontal split

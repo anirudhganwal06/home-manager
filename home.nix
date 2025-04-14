@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  home.username = "anirudh.g";
-  home.homeDirectory = "/Users/anirudh.g";
+  home.username = "anirudh.ganwal@grofers.com";
+  home.homeDirectory = "/Users/anirudh.ganwal@grofers.com";
 
   home.stateVersion = "23.11";
 
@@ -13,11 +13,9 @@
     pkgs.ripgrep
     pkgs.gnutar
     pkgs.atuin
-    pkgs.openvpn
     pkgs.awscli2
     pkgs.kubectl
     pkgs.eksctl
-    pkgs.go
     pkgs.colima
     pkgs.docker
     pkgs.kubernetes-helm
@@ -28,6 +26,8 @@
     pkgs.httpie
     pkgs.bat
     pkgs.k9s
+    pkgs.podman
+    pkgs.podman-compose
   ];
 
   home.file = {

@@ -18,6 +18,9 @@ return {
 				width = 30,
 				side = "right",
 			},
+			update_focused_file = {
+				enable = true,
+			},
 			renderer = {
 				full_name = true,
 				root_folder_label = function(path)
